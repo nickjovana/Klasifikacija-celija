@@ -1,0 +1,167 @@
+*knn 5 uniform
+Preciznost trening skupa: 0.88259
+Matrica konfuzije:
+[[ 613    4    9]
+ [   4 1229    225]
+ [   3    65  411]]
+Preciznost test skupa: 0.81908
+Matrica konfuzije:
+[[232   12   25]
+ [  5 520   100]
+ [  5   62 138]]
+
+*knn 10 uniform
+Preciznost trening skupa:  0.84294
+Matrica konfuzije:
+[[ 599    7    20]
+ [   8 1153    297]
+ [   3    75  401]]
+Preciznost test skupa: : 0.80086
+Matrica konfuzije:
+[[212   15   42]
+ [  8 514   103]
+ [  8   44 153]]
+ 
+*knn 3 distance
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.9990867579908675
+Matrica konfuzije:
+[[268   0   0]
+ [  1 624   0]
+ [  0   0 202]]
+
+*knn 10 distance
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.9972602739726028
+Matrica konfuzije:
+[[266   0   2]
+ [  1 624   0]
+ [  0   0 202]]
+ 
+*svm linear
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 1.0
+Matrica konfuzije:
+[[268   0   0]
+ [  0 625   0]
+ [  0   0 202]]
+
+*svm sigmoid 
+Preciznost trening skupa: 0.3962411902897416
+Matrica konfuzije:
+[[ 19 345 262]
+ [ 87 966 404]
+ [439   5  27]]
+Preciznost test skupa: 0.41735159817351597
+Matrica konfuzije:
+[[  8 139 121]
+ [ 35 434 156]
+ [183   4  15]]
+
+*svm rbf
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.82009
+Matrica konfuzije:
+[[118 150   0]
+ [  0 625   0]
+ [  0  47 155]]
+ 
+*tree 5 entropy
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.9945205479452055
+Matrica konfuzije:
+[[267   1   0]
+ [  2 621   2]
+ [  0   1 201]]
+ 
+*tree 10 entropy
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.9972602739726028
+Matrica konfuzije:
+[[268   0   0]
+ [  0 623   2]
+ [  0   1 201]]
+
+*tree 5 gini
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.993607305936073
+Matrica konfuzije:
+[[267   1   0]
+ [  2 621   2]
+ [  0   2 200]]
+
+*tree 10 gini
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.9972602739726028
+Matrica konfuzije:
+[[268   0   0]
+ [  0 623   2]
+ [  0   1 201]]
+ 
+*Bajes
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 1.0
+Matrica konfuzije:
+[[268   0   0]
+ [  0 625   0]
+ [  0   0 202]]
+
+*Neurinske Njutn
+Preciznost trening skupa: 0.37588097102584184
+Matrica konfuzije:
+[[ 544   79    3]
+ [1250  205    2]
+ [ 205   55  211]]
+Preciznost test skupa: 0.382648401826484
+Matrica konfuzije:
+[[239  28   1]
+ [536  87   2]
+ [ 90  19  93]]
+ 
+*Neurinske Gradijent
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[ 626    0    0]
+ [   0 1457    0]
+ [   0    0  471]]
+Preciznost test skupa: 0.9990867579908675
+Matrica konfuzije:
+[[268   0   0]
+ [  0 624   1]
+ [  0   0 202]]
