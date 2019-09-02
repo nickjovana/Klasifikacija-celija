@@ -1,0 +1,40 @@
+**Naivni Bajes**
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[625   0]
+ [  0 471]]
+Preciznost test skupa: 1.0
+Matrica konfuzije:
+[[269   0]
+ [  0 202]]
+
+**lbfgs**
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[625   0]
+ [  0 471]]
+Preciznost test skupa: 1.0
+Matrica konfuzije:
+[[269   0]
+ [  0 202]]
+
+**sgd**
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[625   0]
+ [  0 471]]
+Preciznost test skupa: 1.0
+Matrica konfuzije:
+[[269   0]
+ [  0 202]]
+
+**svm sigmoid**
+
+Preciznost trening skupa: 0.23996350364963503
+Matrica konfuzije:
+[[211 414]
+ [419  52]]
+Preciznost test skupa: 0.2208067940552017
+Matrica konfuzije:
+[[ 80 189]
+ [178  24]]

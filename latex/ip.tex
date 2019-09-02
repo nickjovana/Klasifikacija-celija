@@ -54,21 +54,39 @@
 
 \begin{document}
 
-\title{Klasifikacija HCC ćelija\\ \small{Seminarski rad u okviru kursa Istraživanje podataka 2}}
+\title{Klasifikacija HCC ćelija\\ \small{Seminarski rad u okviru kursa Istraživanje podataka 2} \\ \small {Matematički fakultet}}
 
 \author{Jovana Nikolić\\ \small{jovananiki7@gmail.com}}
 
 
 \maketitle
 
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
 
 \tableofcontents
 
-\newpage
+\hfill \break
+
 
 \section{Uvod}
 \label{sec:uvod}
-Istraživanje podataka je sve prisutnija oblast u raznim naukama. Usled velikog priliva podataka neophodno je bilo razviti algoritme koji u prihvatljivom vremenu obrađuje date podatke. Samo neke od oblasti gde se primenjuje su medicina, biologija, statistika, veštačka inteligencija...
+Istraživanje podataka je sve prisutnija oblast u raznim naukama. Usled velikog priliva podataka neophodno je bilo razviti algoritme koji u prihvatljivom vremenu obrađuje date podatke. Samo neke od oblasti gde se primenjuje su medicina, biologija, statistika, veštačka inteligencija...\cite{ip1}
 
 U ovom seminarskom radu biće predstavljen detaljan opis postupka klasifikacije ćelija i prikazani rezultati iste. Pre pocetka i primene algoritama potrebno je upoznati se samim podacima sto je opisano u prvom delu. Tema predprocesiranja je opisana u narednom poglavlju, dok su algoritmi klasifikacije i rezultati glavna tema ovog rada. Na samom kraju izvršena je analiza dobijenih rezultata. Za sve primenjene postupke koričćen je programski jezik Python3. Uz standardnu biblioteku koju nudi Python upotrebljivane su još i biblioteke panda, numpy, sklearn i matplotlib (Listing 1)
 
@@ -84,7 +102,7 @@ from sklearn.preprocessing import StandardScaler
 
 \section{Skup podataka} 
 Podaci koji se klasifikuju su dobijeni iz perifernih mononuklearnih krvnih ćelija (Peripheral blood mononuclear cells, PBMCs) PBMC tipa HCC. Ove celije se koriste u istraživanju u različitim oblastima biomedicine, poput infektivnih bolesti, imunologije,
-maligniteta, razvoja vakcina i slično. Glavna funkcija PBMC ćelija je imuna odbrana organizma. Svaki tip ćelije ima karakteristicne obrasce ('mustre') proteina i gena koje ih međusobno razlikuju i mogu da se koriste za podelu prema njihovom tipu.
+maligniteta, razvoja vakcina i slično. Glavna funkcija PBMC ćelija je imuna odbrana organizma. Svaki tip ćelije ima karakteristicne obrasce ('mustre') proteina i gena koje ih međusobno razlikuju i mogu da se koriste za podelu prema njihovom tipu. \cite{ip2}
 
  Sama struktura podaka nad kojima se vrše analize se sastoje od tri zasebna .csv fajla. Svaki fajl predstavlja matricu podataka gde prvi red sadrži redni broj ćelije koja je ispitivana, a prva kolona identifikaciju gena. Vrednosti u matrici sadrže broj transkripta gena  u ćeliji. Takodje svaka datoteka predstavlja jednu klasu. Na Slici 1 dat je isečak iz date matrice zbog sticanja uvida o izgledu samih fajlova.
  
@@ -186,7 +204,7 @@ plt.show()
 \label{fig:pande}
 \end{figure}
 
-Konačno prelazimo na spajanje naših fajlova u jedan fajl. Funkcije kojima smo ovo postigli su navedene u Listingu 4. Nakon učitavanja fajlova, svaki fajl je transponovan, uklonjene su 0 kolone i dodata mu je numerička oznaka klase, a zatim je spojen u jedan fajl nad kojim je vršen proces klasifikacije u nastavku ovog rada. 
+Konačno prelazimo na spajanje naših fajlova u jedan fajl. Funkcije kojima smo ovo postigli su navedene u Listingu 4. Nakon učitavanja fajlova, svaki fajl je transponovan, uklonjene su 0 kolone i dodata mu je numerička oznaka klase, a zatim je spojen u jedan fajl nad kojim je vršen proces klasifikacije u nastavku ovog rada. \cite{p}\cite{s}
 
 \begin{lstlisting}[caption={Spajanje},frame=single, label=simple]
 
@@ -240,7 +258,7 @@ spojeni.to_csv('./spojeni.csv', index = False)
 \section{Proces klasifikacije}
 \label{Klasifikacija}
 
-Nakon što smo podatke sredili i doveli u oblik pogodan za klasifikaciju prelazimo na primenu raznih oblika klasifikacije. Naš cilj je da na osnovu dobijenih podataka utvrdimo zakonitosti i na osnovu njih istreniramo naš model za što bolju klasifikaciju. Biće primenjene metode K najbližih suseda, SVM algoritam, Drveta odlučivanja, Bajesov algoritam i neuronske mreže. U poglavlju koje sledi za svaku vrstu klasifikacije biće menjani parametri i prikazivani rezultati. Pre primene određenog postupka potrebno je da skup podataka podelimo na trening i test skup.Podela je izvršena tako da trening skup sadrži 70\% početnih podataka. Zatim su nad trening podacima sprovedeni navedeni algoritmi i dobijeni određeni zaključi pomoću test skupa. Funkcije kojima smo ovo postigli i zatim kao početni primer primenili K najbližih suseda su prikazane u Listingu 6. 
+Nakon što smo podatke sredili i doveli u oblik pogodan za klasifikaciju prelazimo na primenu raznih oblika klasifikacije. Naš cilj je da na osnovu dobijenih podataka utvrdimo zakonitosti i na osnovu njih istreniramo naš model za što bolju klasifikaciju. Biće primenjene metode K najbližih suseda, SVM algoritam, Drveta odlučivanja, Bajesov algoritam i neuronske mreže. U poglavlju koje sledi za svaku vrstu klasifikacije biće menjani parametri i prikazivani rezultati. Pre primene određenog postupka potrebno je da skup podataka podelimo na trening i test skup.Podela je izvršena tako da trening skup sadrži 70\% početnih podataka. Zatim su nad trening podacima sprovedeni navedeni algoritmi i dobijeni određeni zaključi pomoću test skupa. Funkcije kojima smo ovo postigli i zatim kao početni primer primenili K najbližih suseda su prikazane u Listingu 6. \cite{vi2} \cite{vi}
 
 \begin{lstlisting}[caption={Klasifikacija},frame=single, label=simple]
 
@@ -280,13 +298,13 @@ Nakon što smo podatke sredili i doveli u oblik pogodan za klasifikaciju prelazi
 
 \section{Rezultati}
 \label{Rezultati}
-Rezultate prikazujemo za svaki od algoritama u vidu matrica konfuzije i preciznosti. Ako je preciznost 1 naš model nije dobar jer dolazi do preprilagodjavanja što govori da se model previše oslanja na podatke iz trening skupa. Mala preciznost takođe govori da je model loš. Podrazumevano je da čitalac poseduje predznanje vezano za korišcene metode tako da principi rada algoritama nisu detaljno opisivani.
+Rezultate prikazujemo za svaki od algoritama u vidu matrica konfuzije i preciznosti. Ako je preciznost 1 naš model nije dobar jer dolazi do preprilagodjavanja što govori da se model previše oslanja na podatke iz trening skupa. Mala preciznost takođe govori da je model loš. Podrazumevano je da čitalac poseduje predznanje vezano za korišcene metode tako da principi rada algoritama nisu detaljno opisivani. \cite{tan} \cite{mk}
 
 \subsection{K najbližih suseda}
 \label{subsec:podnaslovM}
 Ovaj algoritam se zasniva na nalaženju najbližih suseda u svakoj iteraciji za svaki podatak. Kao parametari zadaje se vrednost k koja govori koliko suseda uzimamo u obzir. Veća vrednost parametra je pogodnija za rad sa šumovima. Kao mera rastojanja najčesće se koristi Euklidsko rastojanje ali se mogu koristiti i druge metrike za zadavanje težine čvorova poput uniforme težine. Parametri se zadaju u pozivu funkicje prikazanom u Listingu 7. 
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Funkcije KNN},frame=single, label=simple]
 
 clf =  KNeighborsClassifier(n_neighbors=3, weights='uniform')
 clf =  KNeighborsClassifier(n_neighbors=10, weights='uniform')
@@ -298,7 +316,7 @@ clf =  KNeighborsClassifier(n_neighbors=10, weights='distance')
 
 Listing 8 prikazuje izlaze iz programa sa različitim vrednostima parametara koji su menjani zarad dobijanja boljeg modela. Za vrdnost k testirana je vrednost 3 i 10, dok je za metriku birano Euklidsko rastojanje i unifomna dodela težina. Iz rezultata se vidi da uniformna raspodela tezina daje ne tako dobar model sa nedovoljno dobrom preciznosti i za trening i za test skup, gde je npr za drugu klasu pogrešno klasifikovao skoro petinu instanci. Ako se posmatra distanca situacija se menja i za trening skup dolazi do dobrog klasifikovanja celog skupa dok je za test skup preciznost jako blizu jedinici. Sa porastom vrednosti k dobijamo lošije modele za uniformnu raspodelu dok se za rastojanje situacija znatno ne menja.
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Rezultati KNN},frame=single, label=simple]
 
 **knn 3 uniform**
 Preciznost trening skupa: 0.88259
@@ -358,7 +376,7 @@ Matrica konfuzije:
 \label{subsec:podnaslovM}
 SVM ili Support vector machines je metoda potpornih vektora koja se koristi u raznim  oblastima klasifikacije podataka. Metod radi na principu pronalaženja hiperravni koja deli prostor podataka uzimajući u obzir da podaci moraju biti linearno razdvojivi. Listing 9 prikazuje poziv funkcije kojim smo izvrsili ovu klasifikaciju. Vidimo da se kao parametar zadaje karnel, odnosno vrsta SVM algortma. Moguce vrednosti ovog parametra su  ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’.. Mi smo testirali linear, sigmoid i rbf kernel. Kao posebna prednost ovog algortima u literaturi se navodi njegova mala memorijska zahtevnost.
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Funkicje SVM},frame=single, label=simple]
 
 clf = svm.SVC(kernel = "linear")
 
@@ -369,7 +387,7 @@ clf = svm.SVC(kernel = "rbf")
 \end{lstlisting}
 U nastavku Listing 10 prikazuje dobijene rezultate u zavisnosti od parametara. Linearni model se pokazao kao dobar jer je  i na trening a i na test skupu pokažao maksimalnu tacnost. Sigmoidni model daje veoma loše rezultate pogotovo za klasifikaciju prve i trece klase sto se moze videti iz matrice konfuzije. Rbf karnel trening skup klasifikuje sa preciznoscu 1, dok preciznost test skupa iznosi 0.820 i vidimo da je druga klasa klasifikovana bez greske a prva i treća su te koje negativno u utiču na preciznost.
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Rezultati SVM},frame=single, label=simple]
 
 **svm linear**
 Preciznost trening skupa: 1.0
@@ -415,7 +433,7 @@ Matrica konfuzije:
 \label{subsec:podnaslovM}
 Ova metoda je zasnovana na skupu jednostanih pravila zaključivanja pomoću kojih se formira stablo na osnovu koga se vrši neparametarska klasifikacija. Sam algoritam koristi razlicite metode poput CART, ID3, C5.0.  Logoritamska slozenost u odnosu na broj podataka je glavna prednost ovih metoda. Kao i do sada radi dobijanja sto boljih pozivamo funkcije sa različitim parametrima(Listing 11). Klasifikacija je vršena na osnovu zadatih kriterijuma(Gini indeks ili entropija) i zadate dubine stabla od 5 ili 10.
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Funkcije drveta odlučivanja},frame=single, label=simple]
 
 clf =  DecisionTreeClassifier(max_depth=5, criterion = 'entropy')
 clf =  DecisionTreeClassifier(max_depth=10, criterion = 'entropy')
@@ -425,8 +443,7 @@ clf =  DecisionTreeClassifier(max_depth=10, criterion = 'gini')
 
 \end{lstlisting}
 Ovoga puta dobijeni su sledeci rezultati(Listing 12). Prvo smo kao meru koristili entropiju i dobijen za rezultat sa minimalnom greskom kao i kod primene Gini indeksa gde su dobijeni slični rezultati koji za test skup daju jako dobre rezulatate bez obzira koji kriterijum koristimo. 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
-
+\begin{lstlisting}[caption={Rezultati drveta odlučivanja},frame=single, label=simple]
 **tree 5 entropy**
 Preciznost trening skupa: 1.0
 Matrica konfuzije:
@@ -480,14 +497,14 @@ Matrica konfuzije:
 \label{subsec:podnaslovM}
 Ova vrsta klasifikacije se razlikuje od drugih jer se zasniva na verovatnoći događaja. Glavna predpostavka je da su podaci iz uzorka nezavisni. I ovaj algoritam ima vise verzija a u zavisnosti od parametara, mi smo koristili osnovnu verziju prikazanu u Listingu 13. Iako ovaj metod nije deterministički glavna prednost u odnosu na ostale je samo vreme izvršavanja.
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Funkicje Bajesov algoritam},frame=single, label=simple]
 
 clf = GaussianNB()
 
 \end{lstlisting}
 Model koji je dobijen je prikazan u Listingu 14. Dogodila se situacija da je i trening i test skup klasifikovao bez greške tako da zaključujemo da je ovaj metod jako dobar za klasifikaciju naših podataka. Takođe pošto je ova metoda zasnovana na činjenici da su podaci nezavisni možemo zaključiti da je to slučaj i sa našim skupom.
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Rezultati Bajesov algoritam},frame=single, label=simple]
 
 Preciznost trening skupa: 1.0
 Matrica konfuzije:
@@ -505,7 +522,7 @@ Matrica konfuzije:
 \label{subsec:podnaslovM}
 Neuronske mreže su u informatičkom svetu sve popularniji metod za klasifikaciju koji se zasnivaju na nekim potpuno novim principima. Da bi neuronska mreža dobro radila bitno je podesiti mnoge parametre poput broja neurona, dubine skrivenog sloja, aktivacionu funkciju i slicno. Radi lakse upotrebe korisceni su gotovi rešavači(Solveri) i to lbfgs- tehnika zasnovana na kvazi Njutnovim metodama i sgd- konkretno ažuriranje Stohastičkim gradijentnim spustom(Listing 15)
 
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Funkcije neuronske mreže},frame=single, label=simple]
 
 clf = MLPClassifier(solver = 'lbfgs')
 
@@ -513,7 +530,7 @@ clf = MLPClassifier(solver = 'sgd')
 
 \end{lstlisting}
 Iz rezultata zaključujemo da Njutnova metoda ne daje nikakve značajne rezultate i preciznost je veoma mala. Rezultati Stohastičkog gradijentnog spusta daje totalno suprotne rezultate tj gotovo idealno je klasifikovan test skup.
-\begin{lstlisting}[caption={Vizuelizacija},frame=single, label=simple]
+\begin{lstlisting}[caption={Rezultati neuronske mreže},frame=single, label=simple]
 **Njutnova metoda**
 Preciznost trening skupa: 0.37588097102584184
 Matrica konfuzije:
@@ -540,30 +557,45 @@ Matrica konfuzije:
 
 \end{lstlisting}
 
+\section{Klasifikacija prve i treće klase}
+\label{sec:naslov1}
+Da bi dodatno testirali naše algoritme ponovićemo ih na skupu od dve klase. Vođeni pretodnim rezultatima spajamo prvu i treću klasu u jedan fajl na isti način kao i do sada. Primenjene su metode koje su dale najlošije rezultate u klasifikaciji tri klase a to su SVM Sigmoid i lbfgs Solver neuronskih mreža, kao i metode koje su se dobro pokazale a to su Bajesov pristup i SGD neuronska mreža. Ovoga puta preciznost svih metoda  je bila maksimalna, osim SVM sigmoida koja se pokazala lošija nego u prošlom slučaju. Možemo zaključiti da našim podacima ne odgovara ovaj algoritam. Listing 17 prikazuje rezulatate SVM algoritma i LBFGS Solvera koji je u ovom slučaju dao mnogo bolje rezultate.
+
+\begin{lstlisting}[caption={Rezultati klasifikacije dve klase},frame=single, label=simple]
+**lbfgs**
+Preciznost trening skupa: 1.0
+Matrica konfuzije:
+[[625   0]
+ [  0 471]]
+Preciznost test skupa: 1.0
+Matrica konfuzije:
+[[269   0]
+ [  0 202]]
+
+**SVM sigmoid**
+
+Preciznost trening skupa: 0.23996350364963503
+Matrica konfuzije:
+[[211 414]
+ [419  52]]
+Preciznost test skupa: 0.2208067940552017
+Matrica konfuzije:
+[[ 80 189]
+ [178  24]]
+
+\end{lstlisting}
+
+
 
 \section{Zaključak}
 \label{sec:naslov1}
-Klasifikacija velikih podataka je i memorijski i vremenski zahtevan zadatak. Standardni računari često nemaju odgovarajuće performanse za tako velike poslove i iz tog razloga su svi algoritmi primenjeni u okviru platforme Google colab research koja obezbedjuje 12GB ram memorije i razvojno okruzenje za pisanje Python3 koda.\\ Primenjeni su različiti algoritmi za klasifikaciju. Neki od njih su bili vremenski zahtevniji ali i pored toga nisu davali upotrebljive rezultate dok su se neki bolje pokazali. Za dalja istrazivanja neophodno je detaljno se upoznati sa podacima u biolođkom smislu radi boljeg sticanja uvida u kontrolu parametara kao i upotreba jačih racunara koji bi bili  sposobni da omoguće prostornu i vremensku efikasnost. 
-\section{Literatura}
-\label{sec:naslov1}
-[1] Nenad Mitić, Istraživanje podataka 1, http://www.matf.bg.ac.rs/\sim nenad/ip1.html \\
- 
-[2] Nenad Mitić, Istraživanje podataka 2, http://www.matf.bg.ac.rs/\sim nenad/ip2.html \\
+Klasifikacija velikih podataka je i memorijski i vremenski zahtevan zadatak. Standardni računari često nemaju odgovarajuće performanse za tako velike poslove i iz tog razloga su svi algoritmi primenjeni u okviru platforme Google colab research koja obezbedjuje 12GB ram memorije i razvojno okruzenje za pisanje Python3 koda.\\ Primenjeni su različiti algoritmi za klasifikaciju. Neki od njih su bili vremenski zahtevniji ali i pored toga nisu davali upotrebljive rezultate dok su se neki bolje pokazali. Za dalja istrazivanja neophodno je detaljno se upoznati sa podacima u biolođkom smislu radi boljeg sticanja uvida u kontrolu parametara kao i upotreba jačih racunara koji bi bili  sposobni da omoguće prostornu i vremensku efikasnost. \cite{c}
 
-[3]Predrag Janičić, Mladen Nikolić, Veštačka inteligencija http://poincare.matf.bg.ac.rs/\sim janicic\\courses/vi.pdf \\
 
-[4]Mehmed Kantardžić: Data mining: Concepts, Models, Methods, and Algorithms, 2nd. ed., John Wiley \& Sons 2011 \\
-
-[5] Pang-Ning Tan, Michael Steinbach, Anuj Karpatne, Vipin Kumar: Introduction to Data Mining, 2nd ed, Pearson Education, 2019 \\
-
-[6] Scikit-learn. https://scikit-learn.org/ \\
-
-[7] Pandas. https://pandas.pydata.org/pandas-docs/ \\
-
-[8] Google colab research https://colab.research.google.com/ \\
-
-[9] Nemanja Mićović, Veštačka inteligencija http://poincare.matf.bg.ac.rs/\sim nemanja_micovic/vi.html \\
-
+\addcontentsline{toc}{section}{Literatura}
+\appendix
+\bibliography{ip} 
+\bibliographystyle{plain}
 
 
 
